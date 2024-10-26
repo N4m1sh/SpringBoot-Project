@@ -1,0 +1,12 @@
+version: '4'
+services:
+  mysql:
+    image: mysql:8.3.0
+    container_name: inventory-service-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - "3316:3306"  # Use a different host port, like 3307
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./docker/mysql/data:/var/lib/mysql
